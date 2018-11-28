@@ -1,0 +1,8 @@
+GOOD: C:\Work\ang5\scala> spark-submit --class com.magellen.SparkWordCount --master local sparkDemo-1.0-SNAPSHOT.jar inputfile.txt 1
+
+GOOD: C:\Work\ang5\scala>spark-submit --class  com.magellen.SparkWordCount --master local --deploy-mode client --executor-memory 1g --name wordcount --conf "spark.app.id=wordcount" sparkDemo-1.0-SNAPSHOT.jar inputfile.txt 2 > pp 
+
+Not Working: C:\Work\ang5\scala> spark-submit --class  com.magellen.SparkWordCount --master local --deploy-mode client --executor-memory 1g --name wordcount --conf "spark.app.id=wordcount" sparkDemo-1.0-SNAPSHOT.jar hdfs://localhost:8020/c:/users/mpeng/inputfile.txt 2
+
+hdfs dfs -copyFromLocal inputfile.txt c:/users/mpeng/inputfile.txt
+
